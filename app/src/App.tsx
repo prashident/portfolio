@@ -242,28 +242,32 @@ function ProjectsSection() {
 
   const projects = [
     {
-      title: 'PAYJOINT',
+      title: 'PAYJOINT | Team',
       tags: ['Django', 'PostgreSQL', 'Full Stack'],
       description: 'Expense management platform for groups',
       image: '/images/project-payjoint.jpg',
+      githubUrl: 'https://github.com/prashident/payjoint',
     },
     {
-      title: 'LEARNING LOG',
-      tags: ['Django', 'UX/UI Design', 'Web App'],
+      title: 'LEARNING LOG | Solo',
+      tags: ['Django', 'CRUD', 'Web App'],
       description: 'Track your learning journey',
       image: '/images/project-learninglog.jpg',
+      githubUrl: 'https://github.com/prashident/learning-log',
     },
     {
-      title: 'SNAKE AI',
+      title: 'SNAKE AI | Solo',
       tags: ['Python', 'PyTorch', 'Machine Learning'],
       description: 'AI-powered snake game agent',
       image: '/images/project-snakeai.jpg',
+      githubUrl: 'https://github.com/prashident/SnakeAI-Game',
     },
     {
-      title: 'E-YANTRA',
-      tags: ['Robotics', 'Embedded Systems', 'IIT Bombay'],
+      title: 'E-YANTRA | Team',
+      tags: ['IoT', 'Flutter', 'IIT Bombay'],
       description: 'Innovation challenge project',
       image: '/images/project-eyantra.jpg',
+      githubUrl: 'https://youtu.be/tuqRT1E6HJw?si=PgfH122sKTUl2k3Y',
     },
   ];
 
@@ -272,9 +276,12 @@ function ProjectsSection() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
+            <a
               key={project.title}
-              className={`border border-charcoal p-6 group cursor-pointer transition-all duration-600 hover:scale-[1.02] ${
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`border border-charcoal p-6 group block transition-all duration-600 hover:scale-[1.02] ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
@@ -304,15 +311,26 @@ function ProjectsSection() {
               {/* Description */}
               <p className="font-body text-sm text-gray mb-4">{project.description}</p>
 
-              {/* Image */}
+              {/* Image or Placeholder */}
               <div className="overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {project.title === 'LEARNING LOG | Solo' ? (
+                  <div className="aspect-video bg-charcoal/10 group-hover:bg-cream/10 relative overflow-hidden flex items-center justify-center w-full h-48 md:h-64">
+                    <div className="grid grid-cols-2 gap-2 w-3/4 h-3/4 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="bg-teal/20 rounded"></div>
+                      <div className="bg-teal/40 rounded"></div>
+                      <div className="bg-teal/60 rounded"></div>
+                      <div className="bg-teal/80 rounded"></div>
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                )}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

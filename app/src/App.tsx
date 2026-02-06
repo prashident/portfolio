@@ -82,7 +82,8 @@ function Navigation() {
 
         {/* Center - Download CV */}
         <a
-          href="#"
+          href="/resume.pdf"
+          download
           className="hidden md:flex items-center gap-2 text-sm font-body text-charcoal hover:opacity-70 transition-opacity"
         >
           <span>Download CV</span>
@@ -527,20 +528,21 @@ function ContactSection() {
                 github.com/prashident
               </a>
               <a
-                href="https://linkedin.com/in/prashant-gupta"
+                href="https://linkedin.com/in/prashant3033"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-body text-sm text-gray hover:text-charcoal transition-colors flex items-center gap-2"
               >
                 <Linkedin size={16} />
-                linkedin.com/in/prashant-gupta
+                linkedin.com/in/prashant3033
               </a>
               <a
-                href="#"
+                href="https://x.com/versionZerov0"
+                target='_blank'
                 className="font-body text-sm text-gray hover:text-charcoal transition-colors flex items-center gap-2"
               >
                 <Twitter size={16} />
-                @prashant_dev
+                @versionZeroV0
               </a>
             </div>
           </div>
